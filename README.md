@@ -1,1 +1,1 @@
-ML-project
+Linear-Regression-Model-ML-Project
