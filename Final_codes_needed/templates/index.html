@@ -1,0 +1,27 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+  <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+<body style="background-image: url({{url_for('static',filename='img/back.jpg')}})"> 
+  
+  <div id="header">
+    <h1>Dataset Analysis and Processing</h1>      
+    <h2>Using Regression Algorithm in Machine Learning</h2>
+    <br><br>
+    <h3>We take any dataset and give its analysis and result after processing it through <u>Linear regression</u> algorithm</h3>
+  </div>
+  <div id="content">
+    <form method = "POST" action="/upload" enctype="multipart/form-data">
+      <h1>Upload your dataset:</h1>
+      <p><u>Format</u>: The dataset must be a (.csv) file and the variable to be predicted must be the last column of the datatset table</p><br>
+      <center>
+        <input type="file" name='dataset'><br><br><br>
+        <button id="button" type="submit">Submit</button>
+      </center>
+    </form>
+  </div>
+</body>
+<br><br><br><br><br><br><br><br>
+<hr>
+
+{% endblock %}

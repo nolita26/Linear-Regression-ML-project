@@ -1,0 +1,75 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='results.css')}}">
+<body style="background-image: url({{url_for('static',filename='img/back.jpg')}})"> 
+  <div id="header">
+    <h1>Dataset Analysis and Processing</h1>      
+    <h2>Using Regression Algorithm in Machine Learning</h2>
+    <br><br>
+    <h2>Results</h2>
+  </div>
+<br><br>        
+<div id="stats">
+  <h2>Statistical Values for the model</h2><br>
+  <p>Accuracy of the model: {{accuracy}}</p>
+  <p>Mean Absolute Error: {{mae}}</p>
+  <p>Mean Squared Error : {{mse}}</p>
+  <p>Root Mean Squared Error: {{rmse}}</p>
+</div>
+<br><br>
+<div id="analysis">
+  <h2>Dataset analysis</h2><br>
+        <center>
+        <p>Weights Table</p>
+        <br>
+        <img src={{weightsimg}} alt="weights table">
+        <br><br>
+        <p>Pair Plots</p>
+        <br>
+        <img src={{pairplot}} alt="pair plot">
+        <br><br>
+        <p>Area Plot</p>
+        <br>
+        <img src={{areaplot}} alt="area plot">
+        <br><br>
+        <p>Histogram</p>
+        <br>
+        <img src={{histogram}} alt="histogram">
+        <br><br>
+        <p>Line Plot</p>
+        <br>
+        <img src={{lineplot}} alt="Lineplot">
+      </center>
+</div>
+<br><br>
+<div id="results">
+  <h2 >Results of Linear Regression</h2>
+        <br>
+        <center>
+        <p>Regression Plot</p>
+        <br>
+        <img src={{reg_plot}} alt="regression plot">
+        <br><br>
+        <p>Line Plot</p>
+         <br>
+         <img src={{lineplot_result}} alt="">
+         <br><br>
+         <p>Decision Tree</p>
+         <br>
+         <img src="{{tree}}" alt="decision tree">
+        </center>
+</div>
+<br><br>
+<div id="download">
+  <h2>Download your model file below</h2>
+  <br>
+      <center>
+         <a href="{{model_file}}" download>
+          <button>Download Model</button></a>
+      </center>
+</div>
+
+</body>
+
+{% endblock %}
